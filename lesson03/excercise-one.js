@@ -1,6 +1,6 @@
-let moons = ["Triton", "Oberon", "Europa", "Hyperion", "Callisto"];
+let moons = ['Triton', 'Oberon', 'Europa', 'Hyperion', 'Callisto'];
 
-moons.push("Phobos");
+moons.push('Phobos');
 
 moons.splice(2,1);
 
