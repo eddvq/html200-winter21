@@ -5,7 +5,7 @@ function getNum() {
 }
 
 function getMultiples() {
-  let userNumTwo = prompt('What is the first number?')
+  let userNumTwo = prompt('What is the first number?');
   let userNumThree = prompt('What is the second number?');
   alert('The total is: ' + userNumTwo * userNumThree);
 }
