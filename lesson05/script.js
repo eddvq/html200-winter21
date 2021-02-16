@@ -4,9 +4,28 @@ let action = userPrompt.toUpperCase();
 let userAccount = 100;
 
 function asker() {
+  if (userAccount < 30) {
+    alert('Your account balance is low.');
+  }
   userPrompt = prompt('Is there anything else we can help you with?');
-  return action = userPrompt.toUpperCase();
+  action = userPrompt.toUpperCase();
+  return action;
 }
+
+function withdrawGuard(withdrawal) {
+  if (withdrawal > userAccount) {
+    alert('Insufficient funds!');
+    return false;
+  } else {
+    return true;
+  }
+}
+
+// function depositGuard() {
+//   if () {
+//
+//   }
+// }
 
 while (action != 'Q') {
   switch (action) {
@@ -14,25 +33,14 @@ while (action != 'Q') {
     case 'W':
       let w = prompt('How much do you want to withdraw?');
       let wNumber = parseInt(w);
-
-      function withdrawGuard() {
-        if (wNumber > userAccount) {
-          alert('Insufficient funds!');
-          return false;
-        } else {
-          return true;
-        }
-      }
-
-      if (withdrawGuard()){
+      if (withdrawGuard(wNumber)){
         userAccount = userAccount - wNumber;
         alert('Your account balance is: ' + userAccount);
         asker();
-        break;
       } else {
         asker();
-        break;
       }
+      break;
     //Deposit
     case 'D':
       let d = prompt('How much do you want to deposit?');
@@ -50,5 +58,5 @@ while (action != 'Q') {
       alert('Unrecognized command. W - Withdraw, D - Deposit, B - View Balance, Q - Quit');
       asker();
       break;
-    };
+    }
 }
